@@ -1,0 +1,9 @@
+Algorithm,Transactions,Time (s),Gap from Floor
+Theoretical Best (Lower Bound),13,0.0000,0
+Theoretical Worst (Upper Bound),24,0.0000,11
+Layered Solver k4,22,0.0008,9
+Layered Solver,24,0.0003,11
+Max-Max Greedy,24,0.0003,11
+Min-Min Greedy,24,0.0001,11
+Hybrid Greedy Monte Carlo,22,0.2262,9
+Exact MILP Gurobi,22,30.0669,9
