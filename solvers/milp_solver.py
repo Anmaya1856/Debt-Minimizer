@@ -4,6 +4,23 @@ from typing import Dict, List, Tuple
 class MilpSolver():
     """
     Exact solver using Mixed Integer Linear Programming (PuLP).
+
+    Same logic as in milp_solver_gurobi.py just using PuLP here.
+
+    The Math is as follows:
+    Variables:
+        x: is the amount to be transacted
+        z: binary variable showing whether there is transaction between 2 people
+        We create these variables for each pair of creditor and debtor so if there are 5 debtor and 5 creditors
+        We will form a 5x5 matrix for each variable.
+    Obj Function:
+        min z
+    Constraints:
+        1. x <= M * z (any single transaction has to be smaller than the total debtor/creditor value)
+        2. sum of x for each person has to be equal to the net balance of the user
+        3. min sum of z >= max(num of debtors, creditors)
+        4. max sum of z <= num of debtors + num of creditors - 1
+
     """
     def __init__(self, time_limit=60):
         self.time_limit = time_limit

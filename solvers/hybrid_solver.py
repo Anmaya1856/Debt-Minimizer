@@ -17,8 +17,8 @@ class HybridSolver():
          - With probability P (e.g. 0.7): Pick MAX Debtor/Creditor (Heap).
          - With probability 1-P (e.g. 0.3): Pick RANDOM Debtor/Creditor (List).
     
-    Tried a lot of configs, having a higher P val is better (.95 seems to give good results generally)
-    But P b/w 0.85 to 0.97 gives good results generally
+    Tried a lot of configs, having a higher P val seems to be better (.95 gives good results generally)
+    But I tried P b/w 0.85 to 0.98 all give good results depending on the luck
     """
     def __init__(self, iterations=1000, greedy_probability=0.90):
         self.iterations = iterations

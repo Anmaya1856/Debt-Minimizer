@@ -10,10 +10,15 @@ class LayeredSolver():
     Layered Approximation Solver (k-Set Packing).
     
     Strategy:
-    1. k=2: Find all exact pairs (1 Debtor, 1 Creditor).
-    2. k=3: Find all exact triplets (2 Debtors -> 1 Creditor OR 1 Debtor -> 2 Creditors).
-    3. k=4: Find at exact quads (4 people who sum up to 0)
+    1. k=2: Find all exact pairs (1 Debtor, 1 Creditor). Using 2 Sum algo for this
+    2. k=3: Find all exact triplets (2 Debtors -> 1 Creditor OR 1 Debtor -> 2 Creditors). Using 3 sum algo for this
+    3. k=4: Find at exact quads (4 people who sum up to 0). Modified the data to solve it using a 2 sum
     4. Fallback: Use SimpleGreedySolver (Max-Max) for the rest.
+
+    While it might seem like 2 sum and 3 sum are easy algos, the real challenge was thinking that the problem could be
+    converted into these algos. Moreover, converting the data so that I can use these algos was also a big challenge.
+    Unlike leetcode, I can't reuse a value once and I also have duplicates. So, I had to ensure multiple Data Structs
+    work simultaneously.
     """
     def __init__(self, k4=True):
         self.k4 = k4

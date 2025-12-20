@@ -103,7 +103,7 @@ class SimpleGreedySolver:
             amt = min(debtor_val, creditor_val)
             transactions.append((debtor_id, creditor_id, amt))
             
-            # Cleanup maps
+            # Cleanup maps, using discard as it doesn't raise key error if key doesn not exist
             if debtor_val in debtor_map: 
                 debtor_map[debtor_val].discard(debtor_id)
             if creditor_val in creditor_map: 
